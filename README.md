@@ -31,7 +31,7 @@ const store = createStore({
 });
 ```
 
-### useStore()
+### useStore() hook
 
 Inside function components, call `useStore()` to track local state:
 

@@ -2,6 +2,7 @@ import * as symbols from "../symbols";
 import { Observer } from "../observer";
 import { scheduler } from "../scheduler";
 import { wrapObservable } from "../wrapObservable";
+import { canObserve } from "../canObserve";
 
 export class BaseHandler {
     protected readonly _target: any;
@@ -22,17 +23,11 @@ export class BaseHandler {
 
         const value = Reflect.get(target, propKey);
 
-        if (value instanceof Object) {
-            if (value instanceof Date) {
-            }
-            else if (value instanceof Function) {
-            }
-            else {
-                const propDesc = Reflect.getOwnPropertyDescriptor(target, propKey);
+        if (canObserve(value)) {
+            const propDesc = Reflect.getOwnPropertyDescriptor(target, propKey);
 
-                if (propDesc?.configurable || propDesc?.enumerable) {
-                    return wrapObservable(value);
-                }
+            if (propDesc?.configurable || propDesc?.enumerable) {
+                return wrapObservable(value);
             }
         }
 
