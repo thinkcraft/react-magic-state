@@ -1,4 +1,7 @@
-# React Magic State
+# React Magic State 
+
+[![Version](https://img.shields.io/npm/v/react-magic-state.svg)](https://www.npmjs.com/package/react-magic-state)
+![License](https://img.shields.io/github/license/thinkcraft/react-magic-state)
 
 Reactive state management without the hassle.
 
@@ -18,7 +21,7 @@ npm install --save react-magic-state
 
 ## API
 
-`createStore()`
+### createStore()
 
 Simply wrap your store(s) with `createStore()`:
 
@@ -28,7 +31,7 @@ const store = createStore({
 });
 ```
 
-`useStore()`
+### useStore()
 
 Inside function components, call `useStore()` to track local state:
 
@@ -42,7 +45,7 @@ const Hello = view(function Hello() {
 });
 ```
 
-`view()`
+### view()
 
 Wrap your components with `view()` to track store(s) and react to changes:
 
