@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "declaration": true,
+        "declarationDir": "./types",
         "experimentalDecorators": true,
         "jsx": "react",
         "module": "CommonJS",

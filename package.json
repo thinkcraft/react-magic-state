@@ -1,6 +1,6 @@
 {
   "name": "react-magic-state",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Proxy-based transparent state management for React",
   "main": "dist/index.js",
   "repository": {
@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist && rm -rf types",    
     "examples": "webpack-dev-server",
     "test": "mocha"
   },
@@ -19,6 +20,7 @@
     "reactjs",
     "react state",
     "redux",
+    "state",
     "state management",
     "store",
     "es6-proxy"
@@ -50,6 +52,11 @@
     "react": ">= 16.9"
   },
   "files": [
-    "./dist/"
-  ]
+    "dist/*",
+    "types/*"
+  ],
+  "directories": {
+    "lib": "dist"
+  },
+  "types": "types/index.d.ts"
 }
