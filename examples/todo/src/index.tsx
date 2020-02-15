@@ -1,9 +1,6 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { scheduler } from "../../../src/scheduler";
-import { view, store } from "../../../src";
-
-// scheduler.debug = (target, prop) => console.log(target, prop);
+import { view, createStore } from "../../../src";
 
 interface TodoItem {
     text: string;
@@ -22,7 +19,7 @@ class BaseComponent extends React.PureComponent<any, any> {
 }
 
 class Todo extends BaseComponent {
-    private readonly _store = store({
+    private readonly _store = createStore({
         todos: new Array<TodoItem>(),
         input: ""
     });

@@ -1,7 +1,5 @@
 import { assert } from "chai";
-import { addReaction } from "../src/addReaction";
-import { wrapObserver } from "../src/wrapObserver";
-import { getObserver } from "../src/getObserver";
+import { addReaction, wrapObserver, getObserver } from "../../src/core";
 
 describe(`${addReaction.name}()`, function () {
     const wrappedObserver = wrapObserver(() => {});

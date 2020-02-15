@@ -1,6 +1,4 @@
-import { wrapObservable } from "../src/wrapObservable";
-import { wrapObserver } from "../src/wrapObserver";
-import { addReaction } from "../src/addReaction";
+import { wrapObservable, wrapObserver, addReaction } from "../../src/core";
 
 describe("scheduler", function () {
     it("should trigger a reaction when an observed property changes", function (done) {

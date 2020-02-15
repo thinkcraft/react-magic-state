@@ -1,9 +1,6 @@
-import { wrapObservable } from "../../src/wrapObservable";
-import { wrapObserver } from "../../src/wrapObserver";
 import { spy } from "sinon";
-import { addReaction } from "../../src/addReaction";
 import { assert } from "chai";
-import { isObservable } from "../../src/isObservable";
+import { wrapObservable, isObservable } from "../../../src/core";
 
 describe("Array Proxy Handler", function () {
     // const array = wrapObservable([1, 2, 3]));

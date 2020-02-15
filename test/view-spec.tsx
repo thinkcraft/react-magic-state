@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render, mount } from "enzyme";
+import { mount } from "enzyme";
 import { view } from "../src/view";
-import { wrapObservable } from "../src/wrapObservable";
+import { wrapObservable } from "../src/core";
 
 describe(`${view.name}()`, function () {
     it.skip("should work", function () {

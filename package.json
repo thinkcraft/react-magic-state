@@ -1,6 +1,6 @@
 {
   "name": "react-magic-state",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Proxy-based transparent state management for React",
   "main": "dist/index.js",
   "repository": {
@@ -9,8 +9,9 @@
   },
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist && rm -rf types",    
+    "clean": "rm -rf dist && rm -rf types",
     "examples": "webpack-dev-server",
+    "rebuild": "npm run clean && npm run build",
     "test": "mocha"
   },
   "keywords": [

@@ -1,7 +1,5 @@
-import { wrapObserver } from "./wrapObserver";
-import { addReaction } from "./addReaction";
-import { unwrapObserver } from "./unwrapObserver";
 import { useState, useEffect } from "react";
+import { wrapObserver, addReaction, unwrapObserver } from "./core";
 
 export function view<F extends Function>(component: F): F {
     let wrapper;

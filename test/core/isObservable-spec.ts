@@ -1,6 +1,5 @@
 import { assert } from "chai";
-import { isObservable } from "../src/isObservable";
-import { wrapObservable } from "../src/wrapObservable";
+import { isObservable, wrapObservable } from "../../src/core";
 
 describe(`${isObservable.name}()`, function () {
     it("should return true if target is observable", function () {

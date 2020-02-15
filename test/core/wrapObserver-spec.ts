@@ -1,6 +1,5 @@
 import { assert } from "chai";
-import { wrapObserver } from "../src/wrapObserver";
-import { wrapObservable } from "../src/wrapObservable";
+import { wrapObserver, wrapObservable } from "../../src/core";
 
 describe(`${wrapObserver.name}()`, function () {
     it("should return a different function", function () {

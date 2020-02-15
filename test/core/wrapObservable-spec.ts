@@ -1,6 +1,6 @@
 import { assert } from "chai";
-import { wrapObservable } from "../src/wrapObservable";
-import { target } from "../src/symbols";
+import { wrapObservable } from "../../src/core";
+import { target } from "../../src/core/symbols";
 
 describe(`${wrapObservable.name}()`, function () {
     it("should wrap the target in an observable proxy", function () {

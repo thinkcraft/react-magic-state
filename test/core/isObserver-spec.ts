@@ -1,6 +1,5 @@
 import { assert } from "chai";
-import { wrapObserver } from "../src/wrapObserver";
-import { isObserver } from "../src/isObserver";
+import { isObserver, wrapObserver } from "../../src/core";
 
 describe(`${isObserver.name}()`, function () {
     it("should return true if function is observer", function () {

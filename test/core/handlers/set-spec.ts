@@ -1,9 +1,7 @@
 import { spy } from "sinon";
-import { addReaction } from "../../src/addReaction";
-import { wrapObservable } from "../../src/wrapObservable";
-import { wrapObserver } from "../../src/wrapObserver";
 import { assert } from "chai";
-import { isObservable } from "../../src/isObservable";
+import { wrapObservable, wrapObserver, addReaction, isObservable } from "../../../src/core";
+
 
 describe("Set Proxy Handler", function () {
     const set = wrapObservable(new Set([1, 2, 3]));
