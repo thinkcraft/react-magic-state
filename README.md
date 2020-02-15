@@ -1,7 +1,7 @@
 # React Magic State 
 
 [![Version](https://img.shields.io/npm/v/react-magic-state.svg)](https://www.npmjs.com/package/react-magic-state)
-![License](https://img.shields.io/github/license/thinkcraft/react-magic-state)
+[![License](https://img.shields.io/github/license/thinkcraft/react-magic-state)](https://github.com/thinkcraft/react-magic-state/blob/master/LICENSE)
 
 Reactive state management without the hassle.
 
