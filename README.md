@@ -26,7 +26,7 @@ npm install --save react-magic-state
 Simply wrap your store(s) with `useStore()`:
 
 ```js
-const store = createStore({
+const store = useStore({
     foo: 42
 });
 ```
