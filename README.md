@@ -50,7 +50,7 @@ const Hello = view(function Hello() {
 Wrap your components with `view()` to track store(s) and react to changes:
 
 ```jsx
-const Hello = view(class Hello extends React.Component {
+const Hello = view(class Hello extends React.PureComponent {
     render() {
         ...
     }

@@ -41,7 +41,8 @@ const config = {
         }
     },
     devServer: {
-        contentBase: "./examples"
+        contentBase: "./examples",
+        hot: true
     }
 };
 
