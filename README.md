@@ -7,7 +7,7 @@ React state management without the hassle.
 
 ## Introduction
 
-React Magic State was created with simplicity and efficiency in mind. Its tiny API, comprised of just three methods, is enough to express all possible reactive state-component relationships.
+React Magic State was created with simplicity and efficiency in mind. Its tiny API, comprised of just two methods, is enough to express all possible reactive state-component relationships.
 
 The way React Magic State works is by wrapping your store(s) with ES6 proxies, and using them to keep track of every property that is accessed by your React components. Whenever an observed property changes, the relevant components are re-rendered by updating their internal state.
 
@@ -21,9 +21,9 @@ npm install --save react-magic-state
 
 ## API
 
-### createStore()
+### useStore()
 
-Simply wrap your store(s) with `createStore()`:
+Simply wrap your store(s) with `useStore()`:
 
 ```js
 const store = createStore({
@@ -33,7 +33,7 @@ const store = createStore({
 
 ### useStore() hook
 
-Inside function components, call `useStore()` to track local state:
+Inside function components, you can call `useStore()` to track local state:
 
 ```jsx
 const Hello = view(function Hello() {
