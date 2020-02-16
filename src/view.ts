@@ -11,8 +11,6 @@ export function view<F extends Function>(component: F): F {
         wrapper = wrapFunctionComponent(component);
     }
 
-    wrapper.displayName = component["displayName"] ?? component.name;
-
     return wrapper as any;
 }
 
@@ -66,6 +64,8 @@ function wrapFunctionComponent(component: Function) {
 
         return Reflect.apply(component, this, arguments);
     });
+
+    wrapper["displayName"] = component.name;
 
     return wrapper;
 }
