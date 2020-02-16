@@ -1,4 +1,3 @@
-import { FunctionHandler } from "./handlers/function";
 import { ArrayHandler } from "./handlers/array";
 import { SetHandler } from "./handlers/set";
 import { MapHandler } from "./handlers/map";
@@ -8,10 +7,6 @@ import { canObserve } from "./canObserve";
 export function createHandler<T extends Object>(target:T) {
     if (!canObserve(target)) {
         throw new Error("target type is not supported.");
-    }
-
-    if (target instanceof Function) {
-        return new FunctionHandler(target);
     }
 
     if (target instanceof Array) {

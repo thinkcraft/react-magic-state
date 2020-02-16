@@ -10,6 +10,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf dist && rm -rf types",
+    "cover": "nyc mocha",
     "examples": "webpack-dev-server",
     "rebuild": "npm run clean && npm run build",
     "prepare": "npm run rebuild",
@@ -39,6 +40,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "jsdom": "^16.1.0",
     "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "sinon": "^8.1.1",
