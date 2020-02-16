@@ -16,7 +16,7 @@ export class TodoInput extends BaseComponent {
                     onKeyDown={e => this.onKeyDown(e)}
                     onChange={e => this._state.input = e.target.value}
                 />
-                <button onClick={e => this.addTodo()}>Add</button>
+                <button onClick={() => this.addTodo()}>Add</button>
             </>
         );
     }

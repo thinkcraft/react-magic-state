@@ -31,7 +31,27 @@ const store = useStore({
 });
 ```
 
-### useStore() hook
+#### Private Store in class component
+
+Inside class components, you can call `useStore()` to track local state:
+
+```jsx
+const Hello = view(class Hello extends React.PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.store = useStore({
+            name: "World"
+        });
+    }
+
+    render() {
+        return <h1>Hello {this.store.name}!</h1>;
+    }
+});
+```
+
+#### Private store in function component
 
 Inside function components, you can call `useStore()` to track local state:
 
