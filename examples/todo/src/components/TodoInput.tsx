@@ -1,9 +1,9 @@
 import * as React from "react";
 import { BaseComponent } from "./BaseComponent";
-import { createStore } from "../../../../src";
+import { useStore } from "../../../../src";
 
 export class TodoInput extends BaseComponent {
-    private _state = createStore({
+    private _state = useStore({
         input: ""
     });
 
