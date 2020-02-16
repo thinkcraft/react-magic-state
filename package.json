@@ -1,6 +1,6 @@
 {
   "name": "react-magic-state",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Proxy-based transparent state management for React",
   "main": "dist/index.js",
   "repository": {
