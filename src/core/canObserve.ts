@@ -19,11 +19,15 @@ export function canObserve(target: any) {
     else if (constructor === Array) {
         result = true;
     }
-    else if (constructor.toString().indexOf("[native code]") === -1) {
+    else if (!isBuiltIn(constructor)) {
         result = true;
     }
 
     observableTypes.set(constructor, result);
 
     return result;
+}
+
+function isBuiltIn(constructor: Function) {
+    return (constructor.toString().indexOf("[native code]") >= 0);
 }
