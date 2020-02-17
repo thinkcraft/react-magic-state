@@ -1,10 +1,8 @@
 import * as React from "react";
-import { view } from "../../../../src";
 import { BaseComponent } from "./BaseComponent";
 import { TodoInput } from "./TodoInput";
 import { TodoListItem } from "./TodoListItem";
 
-@view
 export class TodoApp extends BaseComponent {
     render() {
         return (
@@ -18,7 +16,7 @@ export class TodoApp extends BaseComponent {
                     )}
                 </ul>
                 <TodoInput />
-                <button onClick={() => this.addLots(100)}>Add 100</button>
+                <button onClick={() => this.addLots(1000)}>Add 1000</button>
                 <button onClick={() => this.store.clear()}>Clear</button>
             </div>
         );

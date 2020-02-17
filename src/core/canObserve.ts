@@ -1,7 +1,7 @@
 const observableTypes = new WeakMap<Function, boolean>();
 
 export function canObserve(target: any) {
-    if (!target) {
+    if (target == null) {
         return false;
     }
 

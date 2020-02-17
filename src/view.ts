@@ -40,11 +40,11 @@ function wrapComponentClass(component: Function) {
         }
 
         componentWillUnmount() {
-            this.render = unwrapObserver(this.render);
-
             if (super.componentWillUnmount) {
                 super.componentWillUnmount();
             }
+
+            this.render = unwrapObserver(this.render);
         }
 
         increaseReactionCount() {
