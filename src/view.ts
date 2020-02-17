@@ -32,11 +32,19 @@ function wrapComponentClass(component: Function) {
         }
 
         componentDidMount() {
+            if (super.componentDidMount) {
+                super.componentDidMount();
+            }
+
             addReaction(this.render, this.increaseReactionCount);
         }
 
         componentWillUnmount() {
             this.render = unwrapObserver(this.render);
+
+            if (super.componentWillUnmount) {
+                super.componentWillUnmount();
+            }
         }
 
         increaseReactionCount() {
