@@ -11,7 +11,7 @@ export class BaseHandler {
         this._target = target;
     }
 
-    get(target: any, propKey: PropertyKey) {
+    get(target: any, propKey: PropertyKey, receiver: any) {
         switch (propKey) {
             case symbols.observable:
                 return true;
@@ -21,7 +21,7 @@ export class BaseHandler {
 
         Observer.active?.registerAccess(this._target, propKey);
 
-        const value = Reflect.get(target, propKey);
+        const value = Reflect.get(target, propKey, receiver);
 
         if (canObserve(value)) {
             const propDesc = Reflect.getOwnPropertyDescriptor(target, propKey);
