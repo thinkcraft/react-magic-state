@@ -16,7 +16,7 @@ export class TodoApp extends BaseComponent {
                     )}
                 </ul>
                 <TodoInput />
-                <button onClick={() => this.addLots(1000)}>Add 1000</button>
+                <button onClick={() => this.addLots(100)}>Add 100</button>
                 <button onClick={() => this.store.clear()}>Clear</button>
             </div>
         );
