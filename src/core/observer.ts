@@ -82,14 +82,12 @@ export class Observer {
         Observer._activeObserver = Observer._observerStack.pop();
     }
 
-    getReactionsForChange(target: any, propKeys: Set<PropertyKey>) {
+    getReactionsForChange(target: any, propKey: PropertyKey) {
         const observation = this._observations.get(target);
 
         if (observation) {
-            for (const propKey of propKeys) {
-                if (observation.has(propKey)) {
-                    return this._reactions;
-                }
+            if (observation.has(propKey)) {
+                return this._reactions;
             }
         }
 

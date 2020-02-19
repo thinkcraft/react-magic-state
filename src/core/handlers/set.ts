@@ -1,5 +1,5 @@
 import { BaseHandler } from "./base";
-import { scheduler } from "../scheduler";
+import { changeTracker } from "../changeTracker";
 
 export class SetHandler extends BaseHandler {
     private readonly _methodWrappers = new WeakMap<Function, Function>();
@@ -8,8 +8,8 @@ export class SetHandler extends BaseHandler {
         super(target);
     }
 
-    get(target: any, propKey: PropertyKey) {
-        const value = super.get(target, propKey);
+    get(target: any, propKey: PropertyKey, receiver: any) {
+        const value = super.get(target, propKey, receiver);
 
         if (value instanceof Function) {
             return this._wrap(value);
@@ -32,8 +32,8 @@ export class SetHandler extends BaseHandler {
             }
             finally {
                 if (beforeSize !== set.size) {
-                    scheduler.registerChange(set, "size");
-                    scheduler.registerChange(set, Symbol.iterator);
+                    changeTracker.registerChange(set, "size");
+                    changeTracker.registerChange(set, Symbol.iterator);
                 }
             }
         };
