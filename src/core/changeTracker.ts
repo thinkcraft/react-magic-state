@@ -2,7 +2,7 @@ import { Observer } from "./observer";
 
 class ChangeTracker {
     private _observedTargets = new WeakMap<any, Set<Observer>>();
-    private _foo?: number;
+    private _timeOut?: number;
     
     debug?: (target: any, prop: PropertyKey) => void;
 
@@ -12,8 +12,8 @@ class ChangeTracker {
     }
 
     registerChange(target: any, propKey: PropertyKey) {
-        if (!this._foo) {
-            this._foo = setTimeout(this.resetObserved);
+        if (!this._timeOut) {
+            this._timeOut = setTimeout(this.resetObserved);
         }
 
         if (this.debug) {
@@ -25,7 +25,7 @@ class ChangeTracker {
     
     resetObserved() {
         this._observedTargets = new WeakMap();
-        this._foo = undefined;
+        this._timeOut = undefined;
     }
 
     runReactions(target: any, propKey: PropertyKey) {
