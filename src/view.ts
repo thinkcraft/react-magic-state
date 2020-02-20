@@ -27,7 +27,7 @@ function wrapComponentClass(component: Function) {
             };
 
 
-            this.increaseReactionCount = this.increaseReactionCount.bind(this);
+            this._increaseReactionCount = this._increaseReactionCount.bind(this);
             this.render = wrapObserver(this.render);
         }
 
@@ -36,7 +36,7 @@ function wrapComponentClass(component: Function) {
                 super.componentDidMount();
             }
 
-            addReaction(this.render, this.increaseReactionCount);
+            addReaction(this.render, this._increaseReactionCount);
         }
 
         componentWillUnmount() {
@@ -47,7 +47,7 @@ function wrapComponentClass(component: Function) {
             this.render = unwrapObserver(this.render);
         }
 
-        increaseReactionCount() {
+        _increaseReactionCount() {
             this.setState({ reactionCount: this.state.reactionCount + 1 });
         }
     };
