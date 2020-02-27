@@ -7,7 +7,7 @@ React state management without the hassle.
 
 ## Introduction
 
-React Magic State was created with simplicity and efficiency in mind. Its tiny API, comprised of just two methods, is enough to express all possible reactive state-component relationships.
+React Magic State was created with simplicity and efficiency in mind. Its tiny API, comprised of just three methods, is enough to express all possible reactive state-component relationships.
 
 The way React Magic State works is by wrapping your store(s) with ES6 proxies, and using them to keep track of every property that is accessed by your React components. Whenever an observed property changes, the relevant components are re-rendered by updating their internal state.
 
@@ -85,6 +85,20 @@ You can also use `view()` as a decorator with Babel or TypeScript:
 class Hello extends React.Component {
     render() {
         ...
+    }
+}
+```
+
+### batch()
+
+Wrap your bulk actions with `batch()` to minimise re-renders and improve performance:
+
+```jsx
+class Store {
+    bulkAction() {
+        batch(() => {
+            ...
+        });
     }
 }
 ```
