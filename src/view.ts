@@ -32,11 +32,11 @@ function wrapComponentClass(component: Function) {
         }
 
         componentDidMount() {
+            addReaction(this.render, this._increaseReactionCount);
+
             if (super.componentDidMount) {
                 super.componentDidMount();
             }
-
-            addReaction(this.render, this._increaseReactionCount);
         }
 
         componentWillUnmount() {

@@ -1,6 +1,6 @@
 {
   "name": "react-magic-state",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "description": "React state management without the hassle.",
   "main": "dist/index.js",
   "repository": {
@@ -14,6 +14,7 @@
     "examples": "webpack-dev-server",
     "rebuild": "npm run clean && npm run build",
     "prepare": "npm run rebuild",
+    "rollup": "rollup --config",
     "test": "mocha"
   },
   "keywords": [
@@ -31,6 +32,7 @@
   "author": "Diego Galeota",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^4.0.0",
     "@types/mocha": "^7.0.1",
     "@types/node": "^13.7.0",
     "@types/react": "^16.9.19",
@@ -38,11 +40,12 @@
     "chai": "^4.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "jsdom": "^16.1.0",
+    "jsdom": "^16.2.1",
     "mocha": "^7.0.1",
     "nyc": "^15.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "rollup": "^2.0.3",
     "sinon": "^8.1.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
@@ -56,11 +59,9 @@
     "react": ">= 16.9"
   },
   "files": [
-    "dist/*",
-    "types/*"
+    "dist/*"
   ],
   "directories": {
     "lib": "dist"
-  },
-  "types": "types/index.d.ts"
+  }
 }
